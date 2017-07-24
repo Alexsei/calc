@@ -1,9 +1,7 @@
 import React from 'react';
-
-import 'bootstrap/dist/css/bootstrap.css';
 import { Collapse, Navbar, NavbarToggler, NavbarBrand, Nav, NavItem, NavLink } from 'reactstrap';
 
-export default class App extends React.Component {
+export default class Home extends React.Component {
   constructor(props) {
     super(props);
 
@@ -25,9 +23,8 @@ export default class App extends React.Component {
           <NavbarBrand href="/">reactstrap</NavbarBrand>
           <Collapse isOpen={this.state.isOpen} navbar>
             <Nav className="ml-auto" navbar>
-
               <NavItem>
-                <NavLink href="/table/">Table</NavLink>
+                <NavLink href="/components/">Components</NavLink>
               </NavItem>
               <NavItem>
                 <NavLink href="https://github.com/reactstrap/reactstrap">Github</NavLink>

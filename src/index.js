@@ -1,8 +1,30 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
-import registerServiceWorker from './registerServiceWorker';
+import { Switch } from 'react-router'
+import {
+  BrowserRouter as Router,
+  Route
+} from 'react-router-dom'
 
-ReactDOM.render(<App />, document.getElementById('root'));
-registerServiceWorker();
+import App from './App';
+import Tab from './table';
+import Menu from './menu';
+//import registerServiceWorker from './registerServiceWorker';
+
+ReactDOM.render(
+  <Router>
+    <div>
+    <Menu />
+    <Switch>
+      <Route exact path="/" component={App}/>
+      <Route path="/table" component={Tab}/>
+      <Route component={Tab}/>
+    </Switch>
+    </div>
+  </Router>,
+
+
+  document.getElementById('root')
+);
+//registerServiceWorker();
