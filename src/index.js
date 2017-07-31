@@ -7,9 +7,11 @@ import {
   Route
 } from 'react-router-dom'
 
-import App from './App';
-import Tab from './table';
-import Menu from './menu';
+import App from './modules/App';
+import Tab from './modules/table';
+import Menu from './modules/menu/menu';
+import Home from './modules/Home';
+import Matematika from './modules/matematika/matematika';
 //import registerServiceWorker from './registerServiceWorker';
 
 ReactDOM.render(
@@ -17,9 +19,11 @@ ReactDOM.render(
     <div>
     <Menu />
     <Switch>
-      <Route exact path="/" component={App}/>
+      <Route exact path="/" component={Home}/>
       <Route path="/table" component={Tab}/>
-      <Route component={Tab}/>
+      <Route path="/Matematika" component={Matematika}/>
+      <Route component={App}/>
+
     </Switch>
     </div>
   </Router>,

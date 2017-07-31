@@ -1,13 +1,13 @@
 import React from 'react';
-import { Nav, NavItem, NavDropdown, DropdownItem, DropdownToggle, DropdownMenu, NavLink } from 'reactstrap';
+import {  NavDropdown, DropdownItem, DropdownToggle, DropdownMenu } from 'reactstrap';
 
-export default class Menu extends React.Component {
+export default class DropMenu extends React.Component {
   constructor(props) {
     super(props);
 
     this.toggle = this.toggle.bind(this);
     this.state = {
-      dropdownOpen: false
+      dropdownOpen: false,
     };
   }
 
@@ -19,34 +19,25 @@ export default class Menu extends React.Component {
 
   render() {
     return (
-      <div>
-        <Nav tabs>
-          <NavItem>
-            <NavLink href="/" active>Главная</NavLink>
-          </NavItem>
+
           <NavDropdown isOpen={this.state.dropdownOpen} toggle={this.toggle}>
             <DropdownToggle nav caret>
-              Dropdown
+              Математика
             </DropdownToggle>
             <DropdownMenu>
-              <DropdownItem header>Header</DropdownItem>
+              <DropdownItem href="/matematika/1klass">1 Класс</DropdownItem>
+              <DropdownItem href="/matematika/2klass">2 Класс</DropdownItem>
+              <DropdownItem href="/matematika/3klass">3 Класс</DropdownItem>
+              <DropdownItem href="/matematika/4klass">4 Класс</DropdownItem>
+              <DropdownItem divider />
+              <DropdownItem href="/matematika/5klass">5 Класс</DropdownItem>
+              <DropdownItem divider />
               <DropdownItem disabled>Action</DropdownItem>
               <DropdownItem>Another Action</DropdownItem>
               <DropdownItem divider />
               <DropdownItem>Another Action</DropdownItem>
             </DropdownMenu>
           </NavDropdown>
-          <NavItem>
-            <NavLink href="/table">Table</NavLink>
-          </NavItem>
-          <NavItem>
-            <NavLink href="#">Another Link</NavLink>
-          </NavItem>
-          <NavItem>
-            <NavLink disabled href="#">Disabled Link</NavLink>
-          </NavItem>
-        </Nav>
-      </div>
     );
   }
 }
