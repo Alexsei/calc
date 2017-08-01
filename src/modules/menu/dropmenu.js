@@ -32,6 +32,8 @@ export default class DropMenu extends React.Component {
               <DropdownItem divider />
               <DropdownItem href="/matematika/5klass">5 Класс</DropdownItem>
               <DropdownItem divider />
+              <DropdownItem href="/matematika/6klass">6 Класс</DropdownItem>
+              <DropdownItem divider />
               <DropdownItem disabled>Action</DropdownItem>
               <DropdownItem>Another Action</DropdownItem>
               <DropdownItem divider />

@@ -31,10 +31,12 @@ class Line extends React.Component {
       this.setState({
         color:'success'
       })
+      return true
     } else {
       this.setState({
       color: 'warning'
       })
+      return false
     }
   }
   render() {
@@ -48,25 +50,52 @@ class Line extends React.Component {
             <Input ref='myInput' state={this.state.color}  placeholder='?' data={data.item}/>
           </FormGroup>
         </Col>
-          <Col xs="3"><Button onClick={this.handleSubmit} color="warning">Проверить</Button></Col>
+
       </Row>)
     }
 }
 
+
+
 class Chall01 extends React.Component {
+  constructor(props) {
+    super(props);
+    this.handleSubmit = this.onBtnClick.bind(this);
+    var ranInt = [],
+        ranRef = [],
+        maxStep = 4,
+        min = 10
+    for (var i = 0; i < 10; i++) {
+
+      ranInt.push(String(Math.floor(Math.random() * (Math.pow(10, (Math.floor(Math.random() * maxStep)+2)) - min + 1)) + min))
+      ranRef.push('Line'+i)
+    }
+    this.state = {
+        ranInt: ranInt,
+        ranRef: ranRef
+    }
+  }
+  onBtnClick() {
+    var ran = this.state.ranRef;
+    var res = true;
+    for (var i = 0; i < ran.length; i++) {
+
+      if (!(this.refs[ran[i]].handleSubmit())) {
+        res = false;
+      }
+    }
+    alert(res)
+  }
+
 
   render() {
-    var randomInt = [],
-        max = 10000,
-        min = 10
+    var ranInt = this.state.ranInt
 
-    for (var i = 0; i < 10; i++) {
-      randomInt.push(String(Math.floor(Math.random() * (max - min + 1)) + min))
-    }
-    var Challs = randomInt.map (function(item, index){
+
+    var Challs = ranInt.map (function(item, index){
       let itemData = {item:item, index:index}
       return (
-          <Line data={itemData}/>
+          <Line ref={"Line"+index}  data={itemData}  key={index}/>
       )
     })
 
@@ -74,7 +103,7 @@ class Chall01 extends React.Component {
       <p className="lead">Задание №1</p>
 
       {Challs}
-
+        <Col xs="3"><Button onClick={this.handleSubmit} color="warning">Проверить</Button></Col>
       </div>)
   }
 };
