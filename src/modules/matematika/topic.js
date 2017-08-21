@@ -11,9 +11,8 @@ class Topics extends React.Component {
         <div>
 
           <Row>
-             <Col md={{ offset: 1 }} xs="5">{i}.{index+1}. {item.name}</Col>
+             <Col md={{ offset: 1 }} xs="5" >{i}.{index+1}. {item.name}</Col>
              <Col xs="1"><Button outline color="success" href={item.urlRules}  > Правила</Button>{' '}</Col>
-             <Col xs="1"><Button outline color="warning" href={item.uplExample}>   Примеры</Button>{' '}</Col>
              <Col xs="1"><Button outline color="info"    href={item.urlChallenge}> Задачи </Button>{' '}</Col>
           </Row>
         </div>

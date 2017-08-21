@@ -6,7 +6,6 @@ export default class Topic extends React.Component {
       return (<Jumbotron>
           <h1 className="display-6">Натуральные числа</h1>
           <Row>
-             <Col xs="1"><Button outline color="warning" href='/matematika/5klass/Integers/Example'>   Примеры</Button>{' '}</Col>
              <Col xs="1"><Button outline color="info"    href='/matematika/5klass/Integers/Challenge'> Задачи </Button>{' '}</Col>
           </Row>
           <p> Для счета предметов применяют натуральные числа.<br/>
@@ -38,7 +37,6 @@ export default class Topic extends React.Component {
          Числа 1346, 5787, 9999 — четырехзначные и т. д.</p>
          <br/>
          <Row>
-           <Col xs="1"><Button outline color="warning" href='/matematika/5klass/Integers/Example'>   Примеры</Button>{' '}</Col>
            <Col xs="1"><Button outline color="info"    href='/matematika/5klass/Integers/Challenge'> Задачи </Button>{' '}</Col>
          </Row>
     </Jumbotron>)

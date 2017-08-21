@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import { Row, Col, Button, Input, FormGroup, Jumbotron } from 'reactstrap';
 import Num from '../num_letters';
 
-export default class Topic extends React.Component {
+export default class Chall extends React.Component {
     render() {
 
 
