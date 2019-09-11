@@ -1,5 +1,5 @@
 import React from 'react';
-import {  NavDropdown, DropdownItem, DropdownToggle, DropdownMenu } from 'reactstrap';
+import {  Dropdown, DropdownItem, DropdownToggle, DropdownMenu } from 'reactstrap';
 
 export default class DropMenu extends React.Component {
   constructor(props) {
@@ -20,7 +20,7 @@ export default class DropMenu extends React.Component {
   render() {
     return (
 
-          <NavDropdown isOpen={this.state.dropdownOpen} toggle={this.toggle}>
+          <Dropdown isOpen={this.state.dropdownOpen} toggle={this.toggle}>
             <DropdownToggle nav caret>
               Математика
             </DropdownToggle>
@@ -31,7 +31,7 @@ export default class DropMenu extends React.Component {
               <DropdownItem href="/matematika/6klass">6 Класс</DropdownItem>
 
             </DropdownMenu>
-          </NavDropdown>
+          </Dropdown>
     );
   }
 }
