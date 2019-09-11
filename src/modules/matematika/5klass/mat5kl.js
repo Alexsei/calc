@@ -7,7 +7,7 @@ const Topics = [
       {name:'Натуральные числа', urlRules:'/matematika/5klass/Integers',
           uplExample:'/matematika/5klass/Integers/Example',
           urlChallenge:'/matematika/5klass/Integers/Challenge'},
-      {name:'Отрезок. Длина отрезка. Треугольник', urlRules:'', uplExample:'', urlChallenge:''},
+      {name:'Отрезок. Длина отрезка. Треугольник', urlRules:'/matematika/5klass/Segment', uplExample:'', urlChallenge:''},
       {name:'Плоскость. Прямая. Луч', urlRules:'', uplExample:'', urlChallenge:''},
       {name:'Шкалы и координаты', urlRules:'', uplExample:'', urlChallenge:''},
       {name:'Сравнение чисел', urlRules:'', uplExample:'', urlChallenge:''}

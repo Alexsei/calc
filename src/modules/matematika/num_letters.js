@@ -28,7 +28,7 @@ export default function sum (num,w){
   // ,[... список можно продолжить
  ]
 
- if(num===0)return m[0][0] // Если число ноль, сразу сообщить об этом и выйти
+ if(num==='0')return m[0][0] // Если число ноль, сразу сообщить об этом и выйти
  var o=[] // Сюда записываем все получаемые результаты преобразования
 
  // Разложим исходное число на несколько трехзначных чисел и каждое полученное такое число обработаем отдельно
@@ -42,7 +42,7 @@ export default function sum (num,w){
   for(var i=0;i<=2;i++)if(pp[i]===0)continue;else
    switch(i){
     case 0:o[n][o[n].length]=m[4][pp[i]];break
-    case 1:if(pp[i]===1){o[n][o[n].length]=m[2][pp[2]];i=3;continue}else{o[n][o[n].length]=m[3][pp[i]]}break
+    case 1:if(pp[i]==='1'){o[n][o[n].length]=m[2][pp[2]];i=3;continue}else{o[n][o[n].length]=m[3][pp[i]]}break
     case 2:if((k===1&&pp[i]<=2)||(pp[i]<=2&&w)){o[n][o[n].length]=m[5][pp[i]]}else{o[n][o[n].length]=m[1][pp[i]]}break
     default: break
    }

@@ -1,7 +1,7 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import { Row, Col, Button, Input, FormGroup, Jumbotron, Label, Alert } from 'reactstrap';
-import Num from '../num_letters';
+//import ReactDOM from 'react-dom';
+import { Row, Col, Button, Input, FormGroup, Jumbotron,  Alert } from 'reactstrap';
+//import Num from '../num_letters';
 
 export default class Chall extends React.Component {
     render() {

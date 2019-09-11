@@ -1,12 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Row, Col, Button, Input, FormGroup, Jumbotron } from 'reactstrap';
+import { Row, Col, Button, Input, FormGroup, Jumbotron, Alert } from 'reactstrap';
 import Num from '../num_letters';
 
 export default class Chall extends React.Component {
     render() {
-
-
       return (<Jumbotron>
             <h1 className="display-6"> Натуральные числа</h1>
             <Chall01 />
@@ -19,39 +17,47 @@ class Line extends React.Component {
       super(props);
       this.handleSubmit = this.onBtnClickHandler.bind(this);
       this.state = {
-          color: '',
+          color: 'info',
           item: this.props.data.item,
       }
-
   }
-  onBtnClickHandler() {
+
+  onBtnClickHandler() {  // проверить решение
     var red1 = Number(this.props.data.item);
     var red2 = parseFloat(ReactDOM.findDOMNode(this.refs.myInput).value);
-    if ( red1===red2) {
+    console.log(red1, red2);
+    if ( red1===red2) { // если правельно окрасить в зеленый
       this.setState({
         color:'success'
       })
       return true
-    } else {
+    } else { // если неправельно окрасить в красный
       this.setState({
-      color: 'warning'
+      color: 'danger'
       })
       return false
     }
   }
+
   render() {
     var data = this.props.data;
     return (
-      <Row key= {this.props.data.index}>
+  //
+      <Row key= {this.props.data.index} >
+
          <Col xs="1">{data.index+1})</Col>
          <Col xs="6">{Num(data.item)}</Col>
          <Col xs="2">
-          <FormGroup color={this.state.color}>
-            <Input ref='myInput' state={this.state.color}  placeholder='?' data={data.item}/>
+          <FormGroup >
+            <Alert color={this.state.color}>
+              <Input ref='myInput' state={this.state.color}  placeholder='?' data={data.item}/>
+            </Alert>
           </FormGroup>
-        </Col>
+         </Col>
 
-      </Row>)
+      </Row>
+      //</Alert>
+    )
     }
 }
 
@@ -64,9 +70,8 @@ class Chall01 extends React.Component {
     var ranInt = [],
         ranRef = [],
         maxStep = 4,
-        min = 10
+        min = 0
     for (var i = 0; i < 10; i++) {
-
       ranInt.push(String(Math.floor(Math.random() * (Math.pow(10, (Math.floor(Math.random() * maxStep)+2)) - min + 1)) + min))
       ranRef.push('Line'+i)
     }
@@ -84,14 +89,12 @@ class Chall01 extends React.Component {
         res = false;
       }
     }
-    alert(res)
+    console.info(res);
   }
 
 
   render() {
     var ranInt = this.state.ranInt
-
-
     var Challs = ranInt.map (function(item, index){
       let itemData = {item:item, index:index}
       return (
@@ -101,7 +104,6 @@ class Chall01 extends React.Component {
 
     return (<div>
       <p className="lead">Задание №1</p>
-
       {Challs}
         <Col xs="3"><Button onClick={this.handleSubmit} color="warning">Проверить</Button></Col>
       </div>)
