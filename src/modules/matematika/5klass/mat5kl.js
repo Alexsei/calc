@@ -8,13 +8,13 @@ const Topics = [
           uplExample:'/matematika/5klass/Integers/Example',
           urlChallenge:'/matematika/5klass/Integers/Challenge'},
       {name:'Отрезок. Длина отрезка. Треугольник', urlRules:'/matematika/5klass/Segment', uplExample:'', urlChallenge:''},
-      {name:'Плоскость. Прямая. Луч', urlRules:'', uplExample:'', urlChallenge:''},
+      {name:'Плоскость. Прямая. Луч', urlRules:'/matematika/5klass/Plane', uplExample:'', urlChallenge:''},
       {name:'Шкалы и координаты', urlRules:'', uplExample:'', urlChallenge:''},
       {name:'Сравнение чисел', urlRules:'', uplExample:'', urlChallenge:''}
     ]
   }
 ];
-   
+
 const mat5kl = (props) => {
   return (
     <div>

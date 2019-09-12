@@ -6,6 +6,7 @@ import mat5kl from './5klass/mat5kl';
 import mat5kl_Integers from './5klass/mat5kl_Integers';
 import mat5kl_Int_Chall from './5klass/mat5kl_Int_Chall';
 import mat5kl_Segment from './5klass/mat5kl_Segment';
+import mat5kl_Plane from './5klass/mat5kl_Plane';
 
 import mat6kl from './6klass/mat6kl';
 import mat6kl_divisor from './6klass/mat6kl_divisor';
@@ -19,6 +20,7 @@ const Matematika = (props) => {
       <Route exact path="/matematika/5klass/Integers" component={mat5kl_Integers}/>
       <Route exact path="/matematika/5klass/Integers/Challenge" component={mat5kl_Int_Chall}/>
       <Route exact path="/matematika/5klass/Segment" component= {mat5kl_Segment}/>
+      <Route exact path="/matematika/5klass/Plane" component= {mat5kl_Plane}/>
 
       <Route exact path="/matematika/6klass" component={mat6kl}/>
       <Route exact path="/matematika/6klass/Divisor" component={mat6kl_divisor}/>
