@@ -1,10 +1,12 @@
 import React from 'react';
 import { Row, Col, Button, Jumbotron } from 'reactstrap';
 
+
 export default class Topic extends React.Component {
     render() {
       return (<Jumbotron color="info" >
           <h1 className="display-6">Плоскость. Прямая. Луч</h1>
+
 <hr className="my-2" />
           <h4 className="display-6">Плоскость</h4>
           Примеры плоскостей мы встречаем в жизни постоянно. Это поверхности окна, парты, школьной доски,

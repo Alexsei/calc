@@ -1,34 +1,30 @@
-
-const mrouter = new Router();
-
-class Router {
+class DataItems {
   constructor() {
-    this.data = [];
-
+    this.itemsURL = [];
   }
   setAdd (name, url, path) {
-    this.data.push({name: name, url:url, path: path })
+    this.itemsURL.push({name: name, url:url, path: path })
   }
   getURL (url) {
       let res = false;
-      let data = this.data;
-    for (let i = 0; i < data.lenght; i++) {
-      if (url == data[i].url) res = data[i]
+      console.log(url, this.itemsURL.length);
+    for (var i = 0; i < this.itemsURL.length; i++) {
+      if (url == this.itemsURL[i].url) res = this.itemsURL[i]
     }
     return res;
   }
+  splitURL = url => url.split('/').filter((item, index) => ((item.length > 0) || (index == 0)));
 };
-class itemURL {
-  constructor(name, url, path, level) {
-    [this.name, this.url, this.path, this.level] = [name, url, path, level];
-    this.branch = [];
-  }
-  addBranch (name, url, path) {
-    this.branch.push(new itemURL(name, url, path, this.level+1));
-  }
-  splitURL = url => url.split('/').filter(item => item.length > 0)
 
-  }
-}
 
+
+let mrouter = (function () {
+  let mrout = new DataItems();
+//************************
+  mrout.setAdd("Главная", "/", "../scr/modules/Home.js");
+  mrout.setAdd("Матиматика", "/Matematika", "../scr/modules/matematika.js");
+
+
+  return mrout;
+})();
 export default mrouter;
