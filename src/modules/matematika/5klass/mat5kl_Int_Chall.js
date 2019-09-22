@@ -2,7 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Row, Col, Button, Input, FormGroup, Jumbotron, Alert } from 'reactstrap';
 import Num from '../num_letters';
-import mrouter from '../../mrouter';
+import Mrouter from '../../mrouter';
+
 export default class Chall extends React.Component {
     render() {
       return (<Jumbotron>
@@ -15,7 +16,7 @@ export default class Chall extends React.Component {
 class Line extends React.Component {
     constructor(props) {
       super(props);
-      console.log (mrouter.getURL('/'));
+      console.log (Mrouter.getURL('/'));
       this.handleSubmit = this.onBtnClickHandler.bind(this);
       this.state = {
           color: 'info',
@@ -44,19 +45,18 @@ class Line extends React.Component {
     var data = this.props.data;
     return (
   //
+  <div color = {this.state.color}>
       <Row key= {this.props.data.index} >
 
          <Col xs="1">{data.index+1})</Col>
          <Col xs="6">{Num(data.item)}</Col>
          <Col xs="2">
-          <FormGroup >
-            <Alert color={this.state.color}>
               <Input ref='myInput' state={this.state.color}  placeholder='?' data={data.item}/>
-            </Alert>
-          </FormGroup>
          </Col>
 
+
       </Row>
+        </div>
       //</Alert>
     )
     }
